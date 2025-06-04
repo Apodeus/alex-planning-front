@@ -86,13 +86,13 @@ export const appConfig: ApplicationConfig = {
             startDate: new Date('2025-05-15'),
             location: 'Location 9'
           },
-          {
+          /*{
             id: 10,
             title: 'Réunion chasses 2026',
             description: '<h3>Attention</h3><p><strong><em><u>Bonjour&nbsp;à&nbsp;tous</u></em></strong>,&nbsp;je&nbsp;vous&nbsp;propose&nbsp;qu&#39;on&nbsp;se&nbsp;retrouve&nbsp;tous&nbsp;à&nbsp;la&nbsp;mairie&nbsp;de&nbsp;Salles&nbsp;afin&nbsp;de&nbsp;faire&nbsp;un&nbsp;point&nbsp;sur&nbsp;la&nbsp;situation&nbsp;concernant&nbsp;le&nbsp;<span style="background-color: rgb(240, 102, 102);">budget&nbsp;chasse&nbsp;2026</span></p><ul><li><span style="color: rgb(240, 102, 102);">UN</span></li><li><span style="color: rgb(0, 71, 178);">DEUX</span></li><li><strong style="color: rgb(102, 185, 102);">TROIS</strong></li></ul>',
             startDate: new Date('2025-05-15'),
             location: 'Mairie de Salles'
-          }
+          }*/
         ];
         gateway.nextId = gateway.evenements.map(event => event.id!).reduce((a, b) => Math.max(a, b), 0) + 1;
         return gateway;
