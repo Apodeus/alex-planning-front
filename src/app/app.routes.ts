@@ -14,5 +14,5 @@ export const routes: Routes = [
   { path: 'evenements/create', component: EvenementCreateUpdateFormComponent },
   { path: 'evenements/:id', component: EvenementDetailComponent },
   { path: 'evenements/:id/edit', component: EvenementCreateUpdateFormComponent },
-  { path: '', redirectTo: '/evenements/create', pathMatch: 'full' }
+  { path: '', redirectTo: '/evenements', pathMatch: 'full' }
 ];
