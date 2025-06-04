@@ -1,0 +1,17 @@
+.description {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+
+}
+
+.event-item-container {
+
+}
+
+.event-card-component {
+
+}
+
+:host ::ng-deep .event-card-component .p-card-title {
+  font-weight: bolder;
+}

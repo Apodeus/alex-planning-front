@@ -1,0 +1,31 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-heure-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.location-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.title-description-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.title-description-container p-editor{
+  margin-top: 20px;
+}
+
+.save-button {
+  display:flex;
+  flex-direction: column;
+  height: 70px;
+}

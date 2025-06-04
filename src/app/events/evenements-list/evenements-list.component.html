@@ -1,0 +1,28 @@
+<div class="main-container">
+  @for (eventByDate of eventsByDate(); track $index) {
+    <div class="date-event">
+      <!-- TODO : Voir pour implémenter un virtual loader ici... pas forcément nécessaire vu le peu de donnée qu'il y aura... -->
+      <div class="date-title">
+        <p-divider align="left" type="solid">
+          <b>{{ eventByDate[0] | date: 'd MMM y' }}</b>
+        </p-divider>
+      </div>
+      <div class="event-list-by-date">
+        @for (event of eventByDate[1]; track event.id) {
+          <div class="event-item" [routerLink]="['/', 'evenements', event.id]">
+            <app-evenement [title]="event.title" [description]="event.description"/>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
+
+
+<p-button
+  class="fab-add-event"
+  icon="pi pi-plus"
+  rounded
+  severity="primary"
+  [routerLink]="['/', 'evenements', 'create']"
+/>

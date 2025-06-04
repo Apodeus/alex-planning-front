@@ -1,0 +1,46 @@
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: calc(var(--footer-height)*2);
+}
+
+.event-list-by-date {
+  align-content: end;
+  flex-grow: 1;
+}
+.date-event {
+}
+
+:host ::ng-deep .date-title .p-divider-content{
+  color: #808080;
+  font-size: 22px;
+}
+
+
+.event-item {
+  margin-top: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.fab-add-event {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1100;
+  width: 56px;
+  height: 56px;
+
+  ::ng-deep .p-button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  ::ng-deep .p-button-icon {
+    font-size: 1.5rem;
+  }
+}

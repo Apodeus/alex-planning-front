@@ -1,0 +1,42 @@
+<div class="main-container">
+
+  <h2>Création d'un nouvel événement</h2>
+
+  <form [formGroup]="eventForm" (ngSubmit)="handleSubmit()">
+
+    <div class="date-heure-container">
+      <p-iftalabel variant="on">
+        <p-datepicker formControlName="date" [iconDisplay]="'input'" [showIcon]="true"
+                      inputId="idDateForm" dateFormat="dd/mm/yy" [showButtonBar]="true"/>
+        <label for="idDateForm">Date</label>
+      </p-iftalabel>
+
+      <p-iftalabel variant="on">
+        <p-datepicker formControlName="hour" [iconDisplay]="'input'" [showIcon]="true"
+                      [timeOnly]="true" inputId="idHourForm"/>
+        <label for="idHourForm">Heure</label>
+      </p-iftalabel>
+    </div>
+    <div class="location-container">
+      <p-iftalabel>
+        <input pInputText id="location_label" formControlName="location" autocomplete="off"/>
+        <label for="location_label">Localisation</label>
+      </p-iftalabel>
+    </div>
+    <div class="title-description-container">
+      <p-iftalabel>
+        <input pInputText id="title_label" formControlName="title" autocomplete="off"/>
+        <label for="title_label">Titre</label>
+      </p-iftalabel>
+
+      <p-editor formControlName="description" [style]="{ height: '200px' }" />
+    </div>
+  </form>
+
+  <p-button
+    class="save-button"
+    [label]="isEdition() ? 'Modifier' : 'Créer'"
+    (onClick)="handleSubmit()"
+    [disabled]="!eventForm.valid"
+  />
+</div>

@@ -1,0 +1,53 @@
+@if (evenementRessource.isLoading()) {
+  <p-progress-spinner
+    strokeWidth="8"
+    fill="transparent"
+    animationDuration=".5s"
+    [style]="{ width: '50px', height: '50px'}"/>
+} @else {
+  @let evenement = evenementRessource.value();
+  <div class="evenement-detail">
+    <p-card class="event-card" [header]="evenement?.title">
+      <div class="event-info">
+        <div class="info-item">
+          <i class="pi pi-calendar"></i>
+          <span>{{ evenement?.startDate | date: 'fullDate' }}</span>
+        </div>
+        <div class="info-item">
+          <i class="pi pi-map-marker"></i>
+          <span>{{ evenement?.location }}</span>
+        </div>
+      </div>
+
+      <div class="event-description">
+        <div class="" [innerHtml]="description() | safeHtml"></div>
+      </div>
+    </p-card>
+
+
+  </div>
+
+  <div class="button-menu">
+    <add-to-calendar-button
+      [attr.name]="evenement?.title"
+      options="['Apple','Google']"
+      [attr.location]="evenement?.location"
+      [attr.startDate]="dayjs(evenement?.startDate).format('YYYY-MM-DD')"
+      timeZone="Europe/Paris"
+      hideTextLabelButton
+      buttonStyle="round"
+      size="10"
+      lightMode="bodyScheme"
+      hideCheckmark="true"
+      hideTextLabelList="true"
+
+    />
+
+    <p-button
+      rounded
+      icon="pi pi-pencil"
+      class="fab-add-event"
+      [routerLink]="['/', 'evenements', evenement?.id, 'edit']"
+    />
+  </div>
+}
